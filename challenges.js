@@ -220,7 +220,11 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
-
+const reverseUpcaseString = (someString) =>  {
+  const upCase = someString.toUpperCase();
+  const newString = upCase.split('').reverse().join('');
+  return newString;
+}
 
 
 
