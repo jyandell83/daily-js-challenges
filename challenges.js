@@ -58,7 +58,13 @@ addTwoNumbers(0, 0) //=> 0
 addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
-
+const addTwoNumbers = (num1, num2) => {
+  if (isNaN(num1) || isNaN(num2)) {
+    return NaN;
+  } else {
+    return num1 + num2;
+  }
+}
 
 
 
@@ -82,6 +88,18 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 
+const sumNumbers = (arr) => {
+  let sum = 0;
+  if (arr.length === 0) {
+    sum = 0;
+  }
+  else {
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    }
+}
+  return sum;
+}
 
 
 
@@ -105,7 +123,18 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-
+const addList = function (x) {
+  if (x === undefined) {
+    return 0;
+  }
+  else {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+}
 
 
 
@@ -128,7 +157,16 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
-
+const computeRemainder = (num1, num2) =>  {
+  if (num2 === 0) {
+    return Infinity;
+  }
+  else {
+  let divide = Math.floor(num1 / num2);
+  let remainder = num1 - (num2 * divide);
+  return remainder;
+  }
+};
 
 
 
