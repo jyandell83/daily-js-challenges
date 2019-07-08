@@ -245,7 +245,18 @@ removeEnds('SEI Rocks!'); //=> "DI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-
+const removeEnds = someString => {
+  if (someString.length < 3)  {
+    return '';
+  }
+  else {
+    let arr = someString.split('');
+    arr.pop();
+    arr.shift();
+    let newString = arr.join('');
+    return newString;
+  }
+};
 
 
 
