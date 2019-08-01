@@ -280,7 +280,17 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
-
+const charCount = (someString)  =>  {
+  const splitString = someString.split('');
+  const someObj = {};
+  for (let i = 0; i < splitString.length; i++)  {
+      someObj[splitString[i]] = 0;
+  }
+  for (let i = 0; i < splitString.length; i++)  {
+      someObj[splitString[i]] += 1;
+  }
+  return someObj;
+}
 
 
 
@@ -306,9 +316,11 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
 
-
-
-
+const formatWithPadding = (num,someString,num2) =>  {
+  const newString = num.toString();
+  let paddedNum = newString.padStart(num2, someString);
+  return paddedNum;
+}
 
 /*-----------------------------------------------------------------
 Challenge: 11-isPalindrome
@@ -331,6 +343,15 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+const isPalindrome = (someString)  =>  {
+  let cleanString = someString.toLowerCase().replace(/\s/g, '');
+  let reverseString = cleanString.split('').reverse().join('');
+  if (cleanString === reverseString)  {
+      return true;
+  }  else  {
+      return false;
+  }
+}
 
 
 
