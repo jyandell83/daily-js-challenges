@@ -413,7 +413,17 @@ mumble('121'); //=> '1-22-111'
 mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
-
+const mumble = (str) =>  {
+  let value = '';
+  const iter = str.length;
+  for (let i = 0; i < iter; i++)  {
+      for (let j = 0; j <= i; j++) {
+          value += str[i];
+      }
+      (i < iter - 1) ? value += '-' : null;
+  }
+  return value;
+}
 
 
 
