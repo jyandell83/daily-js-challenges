@@ -605,7 +605,19 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-
+const reduceArray = (arr, func, acc) =>  {
+  let value;
+  for (let i = 0; i < arr.length; i++)  {
+    if (i === 0) {
+      value = func(acc, arr[i], i )
+    } 
+    else {
+      value = func(value, arr[i], i );
+    }
+    
+  }
+  return value;
+}
 
 
 
@@ -635,6 +647,22 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
+let flatArr = [];
+const flatten = (arr)  =>  {
+  
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            flatten(arr[i]);
+        }
+        else {
+            flatArr.push(arr[i]);
+        }
+    }
+    return flatArr;
+}
+
+
+
 
 
 
@@ -659,7 +687,21 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
-
+const isPrime = (num) =>  {
+  if (num === 2)  {
+      return true;
+  }
+  if (num % 1 === 0 && num > 1){
+    for (let i = 2; i < num; i++)  {
+      if (num % i === 0) {
+        return false;
+      }
+      else { return true;}
+    }
+  } else {
+    return false
+  }
+}
 
 
 
