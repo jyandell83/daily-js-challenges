@@ -729,8 +729,23 @@ primeFactors(105) //=> [3, 5, 7]
 primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
+const primeFactors = (num) =>  {
+  let factors = [];
+  for (let i = 1; i <= num; i++) {
+    if (isPrime(i)) {
+      factors.push(i);
+    }
+  }
+  console.log(factors)
+}
 
-
+primeFactors(2) //=> [2]
+primeFactors(3) //=> [3]
+primeFactors(4) //=> [2, 2]
+primeFactors(18) //=> [2, 3, 3]
+primeFactors(29) //=> [29]
+primeFactors(105) //=> [3, 5, 7]
+primeFactors(200) //=> [2, 2, 2, 5, 5]
 
 
 
